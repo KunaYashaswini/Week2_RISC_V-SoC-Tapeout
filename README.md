@@ -56,7 +56,7 @@ Needed to handle jitter, delay, and frequency errors in off-chip clocks.
 Converts binary values to analog signals.
 Types: Weighted Resistor, R-2R Ladder.
 In BabySoC: 10-bit DAC produces audio/video signals from CPU data.
-
+![My Screenshot](r_2r_images.png)
 ### Conclusion
 VSDBabySoC demonstrates how a small SoC with CPU + PLL + DAC can generate real-world analog outputs.
 It’s a hands-on learning platform for SoC fundamentals, RISC-V, and Sky130 open-source design.
