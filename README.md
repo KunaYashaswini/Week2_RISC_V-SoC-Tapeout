@@ -51,6 +51,7 @@ Converts digital data to analog output.
 Phase Detector → Loop Filter → VCO with feedback.
 Keeps clock stable and synchronized.
 Needed to handle jitter, delay, and frequency errors in off-chip clocks.
+![SoC Screenshot](ChatGPT%20Image%20Oct%203%2C%202025%2C%2009_58_43%20PM.png)
 ### 5. Digital-to-Analog Converter (DAC)
 Converts binary values to analog signals.
 Types: Weighted Resistor, R-2R Ladder.
