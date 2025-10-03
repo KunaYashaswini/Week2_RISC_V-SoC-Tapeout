@@ -8,6 +8,7 @@ Built on Sky130 technology, it serves as an educational platform for SoC and dig
 
 ### 1. What is an SoC?
 A System on Chip (SoC) combines CPU, memory, I/O, GPU/DSP, power control, and special features on one chip.
+![My Screenshot](soc_images.jpeg)
 #### Why Important?
 Smaller, faster, and energy-efficient.
 Lower cost and higher reliability.
