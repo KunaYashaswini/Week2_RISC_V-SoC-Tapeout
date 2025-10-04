@@ -55,7 +55,6 @@ In BabySoC: 10-bit DAC produces audio/video signals from CPU data.
 
 ### Project Structure
 
-txt
 VSDBabySoC/
 ├── src/
 │   ├── include/      # Header files (*.vh)
@@ -67,27 +66,26 @@ VSDBabySoC/
 │   │   └── testbench.v    # Testbench
 └── output/           # Simulation outputs
 
-
----
 ### Cloning the Project
 
-bash
 cd ~/VLSI
+
 git clone https://github.com/manili/VSDBabySoC.git
+
 cd VSDBabySoC/
 
 ##  Simulation Flow
 
 ### Pre-Synthesis Simulation
 
-bash mkdir -p output/pre_synth_sim
+mkdir -p output/pre_synth_sim
+
 iverilog -o output/pre_synth_sim/pre_synth_sim.out \-DPRE_SYNTH_SIM \ -I src/include -I src/module \src/module/testbench.v
 cd output/pre_synth_sim./pre_synth_sim.out
 
 
 ### View in GTKWave:
 
-bash
 gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 ![My Screenshot](Screenshot%20from%202025-10-04%2020-52-11.png)
 ### Conclusion
