@@ -80,8 +80,7 @@ cd VSDBabySoC/
 
 ### Pre-Synthesis Simulation
 
-bash
-mkdir -p output/pre_synth_sim
+bash mkdir -p output/pre_synth_sim
 iverilog -o output/pre_synth_sim/pre_synth_sim.out \-DPRE_SYNTH_SIM \ -I src/include -I src/module \src/module/testbench.v
 cd output/pre_synth_sim./pre_synth_sim.out
 
