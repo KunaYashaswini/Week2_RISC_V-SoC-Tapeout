@@ -19,14 +19,11 @@ Complex design, heat issues, and less flexibility after fabrication.
 
 ### 2. Types of SoCs
 
-#### Microcontroller-based: 
-Low power, simple control (IoT, appliances).
+**Microcontroller-based:** Low power, simple control (IoT, appliances).
 
-#### Microprocessor-based: 
-Runs OS, multitasking (phones, tablets).
+**Microprocessor-based:** Runs OS, multitasking (phones, tablets).
 
-#### Application-Specific: 
-Optimized for special tasks (AI, graphics, networking).
+**Application-Specific:** Optimized for special tasks (AI, graphics, networking).
 
 ### 3. VSDBabySoC
 
@@ -34,14 +31,11 @@ A compact SoC to test CPU, PLL, and DAC together.
 
 #### Components
 
-#### RVMYTH CPU:
-Processes data.
+**RVMYTH CPU** Processes data.
 
-#### PLL:
-Generates stable clock.
+**PLL:** Generates stable clock.
 
-#### DAC:
-Converts digital data to analog output.
+**DAC:** Converts digital data to analog output.
 
 #### Flow
 1.PLL locks clock.
@@ -58,6 +52,45 @@ Converts binary values to analog signals.
 Types: Weighted Resistor, R-2R Ladder.
 In BabySoC: 10-bit DAC produces audio/video signals from CPU data.
 ![My Screenshot](r_2r_images.png)
+
+### Project Structure
+
+txt
+VSDBabySoC/
+├── src/
+│   ├── include/      # Header files (*.vh)
+│   ├── module/       # Verilog + TLV modules
+│   │   ├── vsdbabysoc.v   # Top-level module
+│   │   ├── rvmyth.v       # CPU
+│   │   ├── avsdpll.v      # PLL
+│   │   ├── avsddac.v      # DAC
+│   │   └── testbench.v    # Testbench
+└── output/           # Simulation outputs
+
+
+---
+### Cloning the Project
+
+bash
+cd ~/VLSI
+git clone https://github.com/manili/VSDBabySoC.git
+cd VSDBabySoC/
+
+##  Simulation Flow
+
+### Pre-Synthesis Simulation
+
+bash
+mkdir -p output/pre_synth_sim
+iverilog -o output/pre_synth_sim/pre_synth_sim.out \-DPRE_SYNTH_SIM \ -I src/include -I src/module \src/module/testbench.v
+cd output/pre_synth_sim./pre_synth_sim.out
+
+
+### View in GTKWave:
+
+bash
+gtkwave output/pre_synth_sim/pre_synth_sim.vcd
+![My Screenshot](Screenshot%20from%202025-10-04%2020-52-11.png)
 ### Conclusion
 VSDBabySoC demonstrates how a small SoC with CPU + PLL + DAC can generate real-world analog outputs.
 It’s a hands-on learning platform for SoC fundamentals, RISC-V, and Sky130 open-source design.
